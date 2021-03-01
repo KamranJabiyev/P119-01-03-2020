@@ -1,0 +1,14 @@
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+  }
+
+@mixin customGrid($column_count,$size:""){
+    @for $i from 1 through $column_count{
+        $part:$i/$column_count;
+        .col-#{$size}-#{$i}{
+            width: $part*100%;
+        }
+    }
+}

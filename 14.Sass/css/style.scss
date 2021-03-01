@@ -1,0 +1,66 @@
+@import "partials/Variable";
+@import "partials/mixin";
+@import "partials/extend";
+
+
+.btn-success{
+    @extend %btn;
+    background-color: green;
+    &:hover{
+        background-color: rgb(9, 99, 9);
+    }
+}
+
+.btn-danger{
+    @extend %btn;
+    background-color: red;
+    &:hover{
+        background-color: rgb(214, 12, 12);
+    }
+}
+
+.btn-warning{
+    @extend %btn;
+    color: black;
+    background-color: orange;
+    &:hover{
+        background-color: rgb(201, 135, 13);
+    }
+}
+
+#hello{
+    color: $primary_color;
+    font-size: $font_size*1.5;
+    background-color: black;
+    span{
+        font-size: $font_size/2;
+        &:hover{
+            font-size: $font_size;
+        }
+    }
+    &:hover{
+        background-color: $secondary_color;
+    }
+}
+
+// $total_column:18;
+
+// @for $i from 1 through $total_column{
+//     $part:$i/$total_column;
+//     .col-#{$i}{
+//         width: $part*100%;
+//     }
+// }
+
+@include customGrid(12,"lg");
+
+@include customGrid(12,"xs");
+@include customGrid(18);
+
+
+// .square{
+//     width: 250px;
+//     height: 250px;
+//     background-color: $third;
+//     @include transform(rotate(45deg))
+// }
